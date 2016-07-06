@@ -6,7 +6,7 @@
 	<groupId>co.piui</groupId>
 	<artifactId>piui-parent</artifactId>
 	<packaging>pom</packaging>
-	<version>1.0</version>
+	<version>1.0.0-SNAPSHOT</version>
 	<name>Projeto Piui</name>
 
 	<organization>
@@ -175,13 +175,13 @@
 
 
 	<scm>
-		<connection>scm:git:git@github.com:kalangable/piui</connection>
-		<developerConnection>scm:git:git@github.com:kalangable/piui</developerConnection>
-		<url>git@github.com:kalangable/piui</url>
+		<connection>scm:git:git@github.com:piuimobilidade/piui</connection>
+		<developerConnection>scm:git:git@github.com:piuimobilidade/piui</developerConnection>
+		<url>git@github.com:piuimobilidade/piui</url>
 	</scm>
 	<issueManagement>
 		<system>GitHub</system>
-		<url>https://github.com/kalangable/piui/issues</url>
+		<url>https://github.com/piuimobilidade/piui/issues</url>
 	</issueManagement>
 	<ciManagement>
 		<system>Travis CI</system>

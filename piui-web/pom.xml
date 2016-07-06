@@ -4,7 +4,7 @@
 	<parent>
 		<groupId>co.piui</groupId>
 		<artifactId>piui-parent</artifactId>
-		<version>1.0</version>
+		<version>1.0.0-SNAPSHOT</version>
 	</parent>
 	<artifactId>piui-web</artifactId>
 	<packaging>war</packaging>
