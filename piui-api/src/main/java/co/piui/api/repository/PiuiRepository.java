@@ -1,5 +1,7 @@
 package co.piui.api.repository;
 
+import java.util.List;
+
 public abstract class PiuiRepository<T> extends PiuiRepositoryConfiguration<T> {
 
 	protected Class<T> clazz;
@@ -45,4 +47,6 @@ public abstract class PiuiRepository<T> extends PiuiRepositoryConfiguration<T> {
 	public T getItemById( Integer id ) {
 		return super.entityManager.find( clazz, id );
 	}
+
+	public abstract List<T> listAll();
 }
