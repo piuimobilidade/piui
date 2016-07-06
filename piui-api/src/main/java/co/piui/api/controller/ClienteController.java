@@ -29,7 +29,7 @@ public class ClienteController {
 	@POST
 	@Consumes( "application/json; charset=UTF-8" )
 	@Produces( "application/json; charset=UTF-8" )
-	public Response addPassagemNivel( @Context UriInfo uriInfo, Cliente cliente ) {
+	public Response addCliente( @Context UriInfo uriInfo, Cliente cliente ) {
 		ClienteEntity clienteEntity = save( cliente );
 		if ( clienteEntity != null ) {
 			UriBuilder builder = uriInfo.getAbsolutePathBuilder();
@@ -42,7 +42,7 @@ public class ClienteController {
 	@GET
 	@Produces( "application/json; charset=UTF-8" )
 	@Path( "/{codigo}" )
-	public Response getPassagemNivel( @PathParam( "codigo" ) Integer codigo ) {
+	public Response getCliente( @PathParam( "codigo" ) Integer codigo ) {
 		ClienteEntity entity = clienteRepository.getItemById( codigo );
 		if ( entity != null )
 			return Response
@@ -55,7 +55,7 @@ public class ClienteController {
 	@GET
 	@Produces( "application/json; charset=UTF-8" )
 	@Path( "/cidade/{codigo}" )
-	public Response getPassagemNivelByCidade( @PathParam( "codigo" ) Integer codigo ) {
+	public Response getClienteByCidade( @PathParam( "codigo" ) Integer codigo ) {
 		CidadeEntity cidadeEntity = repositoryCidade.getItemById( codigo );
 		if ( cidadeEntity != null ) {
 			List<Cliente> list = new ArrayList<>();
