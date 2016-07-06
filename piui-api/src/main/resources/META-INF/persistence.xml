@@ -25,16 +25,17 @@
 
 	<!-- </persistence-unit> -->
 
-	<persistence-unit name="develop" transaction-type="RESOURCE_LOCAL">
+	<persistence-unit name="development" transaction-type="RESOURCE_LOCAL">
 		<class>co.piui.api.entity.CidadeEntity</class>
 		<class>co.piui.api.entity.PassagemNivelEntity</class>
 		<class>co.piui.api.entity.ClienteEntity</class>
 		<class>co.piui.api.entity.PublicidadeEntity</class>
 		<properties>
 			<property name="javax.persistence.jdbc.driver" value="org.apache.derby.jdbc.EmbeddedDriver" />
-			<property name="javax.persistence.jdbc.url" value="jdbc:derby:memory;create=true" />
-			<!-- Para gravar os dados em disco <property name="javax.persistence.jdbc.url" 
-				value="jdbc:derby:target/derbydb;create=true" /> -->
+			<!-- <property name="javax.persistence.jdbc.url" value="jdbc:derby:memory;create=true" 
+				/> -->
+			<!-- Para gravar os dados em disco -->
+			<property name="javax.persistence.jdbc.url" value="jdbc:derby:target/derbydb;create=true" />
 			<property name="javax.persistence.jdbc.user" value="" />
 			<property name="javax.persistence.jdbc.password" value="" />
 			<property name="hibernate.dialect" value="org.hibernate.dialect.DerbyTenSevenDialect" />
