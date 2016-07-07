@@ -44,10 +44,9 @@ public class CidadeController {
 	}
 
 	@PUT
-	@Consumes( "application/json; charset=UTF-8" )
-	@Produces( "application/json; charset=UTF-8" )
 	@Path( "/{codigo}" )
-	public Response updadeCidade( @Context UriInfo uriInfo, @PathParam( "codigo" ) Integer codigo, Cidade cidade ) {
+	@Consumes( "application/json; charset=UTF-8" )
+	public Response updadeCidade( @PathParam( "codigo" ) Integer codigo, Cidade cidade ) {
 		CidadeEntity entity = new CidadeEntity();
 		entity.setId( codigo );
 		entity.setNome( cidade.getNome() );
