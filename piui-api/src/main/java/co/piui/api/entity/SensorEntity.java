@@ -7,6 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
@@ -17,28 +18,30 @@ import lombok.Setter;
 @Getter
 @Setter
 @Entity
-@Table( name = "cidade" )
-public class CidadeEntity {
-
+@Table( name = "sensor" )
+public class SensorEntity {
 	@Id
 	@GeneratedValue( strategy = GenerationType.AUTO )
 	@Column( name = "id" )
 	private Integer id;
-	@Column( name = "nome", length = 80 )
 	@NotNull
-	private String nome;
+	@Column( name = "identificacao" )
+	private String identificacao;
 
-	@Column( name = "uf" )
+	@Column( name = "descricao" )
+	private String descricao;
+
 	@NotNull
-	private UF uf;
+	@Column( name = "longitude", precision = 10, scale = 6 )
+	private Float longitude;
+	@NotNull
+	@Column( name = "latitude", precision = 10, scale = 6 )
+	private Float latitude;
 
-	@OneToMany( mappedBy = "cidadeEntity", targetEntity = PassagemNivelEntity.class )
-	private List<PassagemNivelEntity> passagemNivel;
-
-	@OneToMany( mappedBy = "cidadeEntity", targetEntity = ClienteEntity.class )
-	private List<ClienteEntity> clienteEntity;
-	
-	@OneToMany( mappedBy = "cidadeEntity", targetEntity = SensorEntity.class)
-	private List<SensorEntity> sensorEntity;
+	@NotNull
+	@Column( name = "status" )
+	private Status status = Status.ATIVO;
+	@ManyToOne
+	private CidadeEntity cidadeEntity;
 
 }
