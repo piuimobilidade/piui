@@ -44,4 +44,6 @@ public class SensorEntity {
 	@ManyToOne
 	private CidadeEntity cidadeEntity;
 
+	@OneToMany( mappedBy = "sensorEntity", targetEntity = MonitoramentoEntity.class)
+	private List<MonitoramentoEntity> monitoramentoEntity;
 }

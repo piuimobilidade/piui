@@ -19,4 +19,13 @@ public class SensorRepository extends PiuiRepository<SensorEntity> {
 		return this.entityManager.createQuery( hql ).getResultList();
 	}
 
+	@SuppressWarnings( "unchecked" )
+	public SensorEntity getSensorByIdentificacao( String identificacao ) {
+		String hql = "FROM SensorEntity c where c.identificacao = :identificacao ORDER BY c.id";
+		List<SensorEntity> listresult = this.entityManager.createQuery( hql ).setParameter( "identificacao", identificacao )
+				.setMaxResults( 1 )
+				.getResultList();
+		return listresult.get( 0 );
+	}
+
 }

@@ -30,6 +30,8 @@
 		<class>co.piui.api.entity.PassagemNivelEntity</class>
 		<class>co.piui.api.entity.ClienteEntity</class>
 		<class>co.piui.api.entity.PublicidadeEntity</class>
+		<class>co.piui.api.entity.SensorEntity</class>
+		<class>co.piui.api.entity.MonitoramentoEntity</class>
 		<properties>
 			<property name="javax.persistence.jdbc.driver" value="org.apache.derby.jdbc.EmbeddedDriver" />
 			<!-- <property name="javax.persistence.jdbc.url" value="jdbc:derby:memory;create=true" 
