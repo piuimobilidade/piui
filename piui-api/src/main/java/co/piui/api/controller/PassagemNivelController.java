@@ -31,7 +31,6 @@ public class PassagemNivelController {
 
 	@POST
 	@Consumes( "application/json; charset=UTF-8" )
-	@Produces( "application/json; charset=UTF-8" )
 	public Response addPassagemNivel( @Context UriInfo uriInfo, PassagemNivel passagemNivel ) {
 		PassagemNivelEntity passagemNivelEntity = save( passagemNivel );
 		UriBuilder builder = uriInfo.getAbsolutePathBuilder();

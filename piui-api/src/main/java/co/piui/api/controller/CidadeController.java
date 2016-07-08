@@ -34,7 +34,6 @@ public class CidadeController {
 
 	@POST
 	@Consumes( "application/json; charset=UTF-8" )
-	@Produces( "application/json; charset=UTF-8" )
 	public Response addCidade( @Context UriInfo uriInfo, Cidade cidade ) {
 		CidadeEntity entity = new CidadeEntity();
 		entity.setNome( cidade.getNome() );

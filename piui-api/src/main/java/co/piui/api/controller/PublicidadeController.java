@@ -31,7 +31,6 @@ public class PublicidadeController {
 
 	@POST
 	@Consumes( "application/json; charset=UTF-8" )
-	@Produces( "application/json; charset=UTF-8" )
 	public Response addPublicidade( @Context UriInfo uriInfo, Publicidade publicidade ) {
 		PublicidadeEntity publicidadeEntity = this.save( publicidade );
 		if ( publicidadeEntity != null ) {

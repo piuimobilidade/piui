@@ -31,7 +31,6 @@ public class ClienteController {
 
 	@POST
 	@Consumes( "application/json; charset=UTF-8" )
-	@Produces( "application/json; charset=UTF-8" )
 	public Response addCliente( @Context UriInfo uriInfo, Cliente cliente ) {
 		ClienteEntity clienteEntity = save( cliente );
 		if ( clienteEntity != null ) {

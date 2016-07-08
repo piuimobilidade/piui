@@ -32,7 +32,6 @@ public class SensorController {
 
 	@POST
 	@Consumes( "application/json; charset=UTF-8" )
-	@Produces( "application/json; charset=UTF-8" )
 	public Response addSensor( @Context UriInfo uriInfo, Sensor sensor ) {
 		SensorEntity sensorEntity = save( sensor );
 		if ( sensorEntity != null ) {
