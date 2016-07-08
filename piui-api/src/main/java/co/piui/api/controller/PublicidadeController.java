@@ -3,6 +3,7 @@ package co.piui.api.controller;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.inject.Inject;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
@@ -23,8 +24,10 @@ import co.piui.api.repository.PublicidadeRepository;
 
 @Path( "/publicidade" )
 public class PublicidadeController {
-	private PublicidadeRepository repositoryPublicidade = new PublicidadeRepository();
-	private ClienteRepository clienteRepository = new ClienteRepository();
+	@Inject
+	private PublicidadeRepository repositoryPublicidade;
+	@Inject
+	private ClienteRepository clienteRepository;;
 
 	@POST
 	@Consumes( "application/json; charset=UTF-8" )

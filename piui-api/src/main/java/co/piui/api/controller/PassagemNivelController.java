@@ -3,6 +3,7 @@ package co.piui.api.controller;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.inject.Inject;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
@@ -23,8 +24,10 @@ import co.piui.api.repository.PassagemNivelRepository;
 
 @Path( "/passagem-nivel" )
 public class PassagemNivelController {
-	private CidadeRepository repositoryCidade = new CidadeRepository();
-	private PassagemNivelRepository passagemNivelRepository = new PassagemNivelRepository();
+	@Inject
+	private CidadeRepository repositoryCidade;
+	@Inject
+	private PassagemNivelRepository passagemNivelRepository;
 
 	@POST
 	@Consumes( "application/json; charset=UTF-8" )

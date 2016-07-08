@@ -3,6 +3,7 @@ package co.piui.api.controller;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.inject.Inject;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
@@ -28,7 +29,8 @@ import co.piui.api.repository.CidadeRepository;
 @Path( "/cidade" )
 public class CidadeController {
 
-	private CidadeRepository repository = new CidadeRepository();
+	@Inject
+	private CidadeRepository repository;;
 
 	@POST
 	@Consumes( "application/json; charset=UTF-8" )
