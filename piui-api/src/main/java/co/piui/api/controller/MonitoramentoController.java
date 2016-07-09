@@ -33,10 +33,6 @@ public class MonitoramentoController {
 		return Response.status( 201 ).build();
 	}
 
-	private Status getStatusLastMonitoramento() {
-		return repository.getLastMonitoramento().getStatus();
-	}
-
 	private MonitoramentoEntity save( Monitoramento monitoramento ) {
 		SensorEntity sensorEntity = sensorRepository.getSensorByIdentificacao( monitoramento.getSensorDescricao() );
 		MonitoramentoEntity monitoramentoEntity = new MonitoramentoEntity();
@@ -44,7 +40,7 @@ public class MonitoramentoController {
 		monitoramentoEntity.setVelocidade( monitoramento.getVelocidade() );
 		monitoramentoEntity.setPassagem( new Date() );
 		monitoramentoEntity.setSensorEntity( sensorEntity );
-		if ( getStatusLastMonitoramento().equals( Status.ATIVO ) ) {
+		if ( repository.getLastMonitoramento().equals( Status.ATIVO ) ) {
 			monitoramentoEntity.setStatus( Status.INATIVO );
 		}
 		return monitoramentoEntity;

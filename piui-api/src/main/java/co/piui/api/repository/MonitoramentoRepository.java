@@ -5,6 +5,7 @@ import java.util.List;
 import javax.inject.Singleton;
 
 import co.piui.api.entity.MonitoramentoEntity;
+import co.piui.api.entity.Status;
 
 @Singleton
 public class MonitoramentoRepository extends PiuiRepository<MonitoramentoEntity> {
@@ -20,10 +21,10 @@ public class MonitoramentoRepository extends PiuiRepository<MonitoramentoEntity>
 	}
 
 	@SuppressWarnings( "unchecked" )
-	public MonitoramentoEntity getLastMonitoramento() {
+	public Status getLastMonitoramento() {
 		String hql = "FROM MonitoramentoEntity c ORDER BY c.id DESC";
 		List<MonitoramentoEntity> listResult = this.entityManager.createQuery( hql ).setMaxResults( 1 ).getResultList();
-		return listResult.get( 0 );
+		return ( listResult.isEmpty() ? Status.INATIVO : listResult.get( 0 ).getStatus() );
 	}
 
 }

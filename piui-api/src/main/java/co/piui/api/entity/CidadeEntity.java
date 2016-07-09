@@ -24,7 +24,7 @@ public class CidadeEntity {
 	@GeneratedValue( strategy = GenerationType.AUTO )
 	@Column( name = "id" )
 	private Integer id;
-	@Column( name = "nome", length = 80 )
+	@Column( name = "nome", unique = true , length = 80 )
 	@NotNull
 	private String nome;
 

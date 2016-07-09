@@ -25,7 +25,7 @@ public class SensorEntity {
 	@Column( name = "id" )
 	private Integer id;
 	@NotNull
-	@Column( name = "identificacao" )
+	@Column( name = "identificacao" , unique = true )
 	private String identificacao;
 
 	@Column( name = "descricao" )

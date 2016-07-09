@@ -28,7 +28,7 @@ public class ClienteEntity {
 	@Column( name = "razao_social", length = 80 )
 	@NotNull
 	private String razaoSocial;
-	@Column( name = "documento", length = 80 )
+	@Column( name = "documento", unique = true , length = 80 )
 	@NotNull
 	private String documento;
 	@NotNull
