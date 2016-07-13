@@ -9,6 +9,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
@@ -25,7 +26,7 @@ public class SensorEntity {
 	@Column( name = "id" )
 	private Integer id;
 	@NotNull
-	@Column( name = "identificacao" , unique = true )
+	@Column( name = "identificacao", unique = true )
 	private String identificacao;
 
 	@Column( name = "descricao" )
@@ -44,6 +45,9 @@ public class SensorEntity {
 	@ManyToOne
 	private CidadeEntity cidadeEntity;
 
-	@OneToMany( mappedBy = "sensorEntity", targetEntity = MonitoramentoEntity.class)
+	@OneToMany( mappedBy = "sensorEntity", targetEntity = MonitoramentoEntity.class )
 	private List<MonitoramentoEntity> monitoramentoEntity;
+
+	@OneToOne( mappedBy = "sensorEntity", targetEntity = SondaEntity.class )
+	private SondaEntity sondaEntity;
 }
