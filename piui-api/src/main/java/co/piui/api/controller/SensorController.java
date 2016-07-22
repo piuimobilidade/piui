@@ -63,7 +63,7 @@ public class SensorController {
 		if ( cidadeEntity != null ) {
 			List<Sensor> list = new ArrayList<>();
 			for ( SensorEntity entity : cidadeEntity.getSensorEntity() ) {
-				list.add( new Sensor( null, entity.getIdentificacao(), entity.getDescricao(), entity.getStatus(), entity.getLongitude(),
+				list.add( new Sensor( entity.getId(), entity.getIdentificacao(), entity.getDescricao(), entity.getStatus(), entity.getLongitude(),
 						entity.getLatitude(), null ) );
 			}
 			return Response.ok( list ).build();

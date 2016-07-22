@@ -14,7 +14,8 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @JsonInclude( Include.NON_NULL )
 public class Sonda {
+	private Integer id;
 	private String sensorDescricao;
 	private Date data;
-
+	private Date dataStart;
 }

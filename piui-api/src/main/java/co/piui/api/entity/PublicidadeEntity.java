@@ -9,6 +9,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 import javax.validation.constraints.NotNull;
 
 import lombok.Getter;
@@ -31,6 +33,7 @@ public class PublicidadeEntity {
 	private Integer quantidadeAnuncio;
 	@Column
 	@NotNull
+	@Temporal(TemporalType.TIMESTAMP)
 	private Date vigencia;
 
 	@ManyToOne
